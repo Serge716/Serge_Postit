@@ -1,11 +1,9 @@
-<p class='lead'>
-  <%= pluralize(@posts.size, 'post') %>
-  <hr>
-</p>
+<%= render 'shared/content_title', title: pluralize(@posts.size, 'post') %>
 
 <% @posts.each do |post| %>
   <div class="row">
     <div class="span8 well">
+      <%= render post.categories %>
       <h4><%= link_to post.title, post.url %></h4>
       <p><%= post.description %></p>
       <p>
